@@ -1,0 +1,26 @@
+:root {
+  --ink: #172331;
+  --line: #9db6c3;
+  --paper: #f4f6f8;
+  --font-base: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% -10%, #d0ecff 0 35%, transparent 45%),
+    radial-gradient(circle at 90% 0%, #fbe3cb 0 28%, transparent 43%),
+    linear-gradient(180deg, #eaf4ff, var(--paper));
+}

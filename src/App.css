@@ -1,0 +1,508 @@
+.scene {
+  width: min(1280px, 100% - 2rem);
+  margin: 1.2rem auto 2rem;
+  color: var(--ink);
+}
+
+.scene-header {
+  background: linear-gradient(145deg, rgba(237, 249, 255, 0.92), rgba(248, 248, 248, 0.92));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 16px 35px rgba(15, 35, 52, 0.08);
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2477a4;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.scene-header h1 {
+  margin: 0.35rem 0 0.65rem;
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  line-height: 1.05;
+}
+
+.lead {
+  margin: 0;
+  max-width: 68ch;
+}
+
+.dashboard {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  align-items: start;
+}
+
+.scene-body {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.signal-card,
+.stats-card,
+.controls-card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.85rem;
+  box-shadow: 0 8px 24px rgba(20, 32, 45, 0.1);
+}
+
+h2 {
+  margin: 0 0 0.7rem;
+  font-size: 1.04rem;
+  letter-spacing: 0.01em;
+}
+
+.signal-duo {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.7rem;
+}
+
+.signal-title {
+  margin: 0 0 0.35rem;
+  text-align: center;
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2e5f7b;
+  font-weight: 700;
+}
+
+.signal-body,
+.road-signal {
+  width: 36px;
+  background: #0f1720;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 0.35rem;
+}
+
+.light-stack {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.light-stack-horizontal {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.light-stack-horizontal .lamp {
+  width: 26px;
+}
+
+.lamp {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0.2;
+  transition: opacity 200ms ease, box-shadow 250ms ease;
+}
+
+.lamp-red {
+  background: #f44336;
+}
+
+.lamp-yellow {
+  background: #ffbe0b;
+}
+
+.lamp-green {
+  background: #37b24d;
+}
+
+.lamp.is-on {
+  opacity: 1;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.phase-label {
+  margin: 0.55rem 0 0.3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.phase-cycle {
+  margin: 0 0 0.45rem;
+  text-align: center;
+  font-size: 0.86rem;
+  color: #2e5f7b;
+}
+
+.progress-track {
+  height: 9px;
+  border-radius: 999px;
+  background: #dde7ed;
+  overflow: hidden;
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #0096c7, #00b4d8);
+  transition: width 120ms linear;
+}
+
+.stats-card p {
+  margin: 0.28rem 0;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.7rem;
+}
+
+button,
+select {
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: #0b7ea4;
+  color: #fff;
+  border-color: #0b7ea4;
+}
+
+button.ghost {
+  background: #ffffff;
+  color: #0c4155;
+  border-color: #86adc0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+select {
+  background: #fff;
+  width: 100%;
+}
+
+.road-stage {
+  margin-top: 0;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 630px;
+  border: 1px solid #88a7b9;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(112, 160, 102, 0.55), rgba(90, 138, 83, 0.35)),
+    linear-gradient(135deg, #a8d1ea, #b8d8ed);
+}
+
+.road-horizontal,
+.road-vertical {
+  position: absolute;
+  background: #4e4e57;
+}
+
+.road-horizontal {
+  left: 0;
+  right: 0;
+  top: 34%;
+  height: 32%;
+}
+
+.road-vertical {
+  top: 0;
+  bottom: 0;
+  left: 34%;
+  width: 32%;
+}
+
+.intersection-core {
+  position: absolute;
+  left: 34%;
+  top: 34%;
+  width: 32%;
+  height: 32%;
+  background: #5a5a65;
+}
+
+.divider {
+  position: absolute;
+}
+
+.divider-horizontal {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 6px;
+  transform: translateY(-50%);
+  background:
+    repeating-linear-gradient(
+        90deg,
+        #f7e16a,
+        #f7e16a 40px,
+        transparent 40px,
+        transparent 70px
+      ) left center / 34% 100% no-repeat,
+    repeating-linear-gradient(
+        90deg,
+        #f7e16a,
+        #f7e16a 40px,
+        transparent 40px,
+        transparent 70px
+      ) right center / 34% 100% no-repeat;
+}
+
+.divider-vertical {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 6px;
+  transform: translateX(-50%);
+  background:
+    repeating-linear-gradient(
+        180deg,
+        #f7e16a,
+        #f7e16a 40px,
+        transparent 40px,
+        transparent 70px
+      ) center top / 100% 34% no-repeat,
+    repeating-linear-gradient(
+        180deg,
+        #f7e16a,
+        #f7e16a 40px,
+        transparent 40px,
+        transparent 70px
+      ) center bottom / 100% 34% no-repeat;
+}
+
+.lane {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lane-eastbound {
+  left: 0;
+  right: 0;
+  top: 60%;
+  height: 2px;
+}
+
+.lane-westbound {
+  left: 0;
+  right: 0;
+  top: 40%;
+  height: 2px;
+}
+
+.lane-southbound {
+  top: 0;
+  bottom: 0;
+  left: 40%;
+  width: 2px;
+}
+
+.lane-northbound {
+  top: 0;
+  bottom: 0;
+  left: 60%;
+  width: 2px;
+}
+
+.lane-arrow {
+  position: absolute;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.74);
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.lane-arrow-east {
+  right: 7%;
+  top: 62%;
+}
+
+.lane-arrow-west {
+  left: 7%;
+  top: 36%;
+}
+
+.lane-arrow-south {
+  left: 57%;
+  bottom: 8%;
+  transform: rotate(90deg);
+}
+
+.lane-arrow-north {
+  left: 37%;
+  top: 8%;
+  transform: rotate(90deg);
+}
+
+.stop-line {
+  position: absolute;
+  background: #f4f5f6;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.36);
+}
+
+.stop-line-east {
+  left: 33%;
+  top: 50%;
+  width: 5px;
+  height: 16%;
+}
+
+.stop-line-west {
+  left: 67%;
+  top: 34%;
+  width: 5px;
+  height: 16%;
+}
+
+.stop-line-south {
+  top: 33%;
+  left: 34%;
+  width: 16%;
+  height: 5px;
+}
+
+.stop-line-north {
+  top: 67%;
+  left: 50%;
+  width: 16%;
+  height: 5px;
+}
+
+.road-signal {
+  position: absolute;
+  z-index: 6;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.28);
+  transform: translate(-50%, -50%);
+}
+
+.road-signal-ew-east {
+  top: 58%;
+  left: 69%;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.road-signal-ew-west {
+  top: 42%;
+  left: 31%;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.road-signal-ns-south {
+  top: 70%;
+  left: 44%;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.road-signal-ns-north {
+  top: 30%;
+  left: 56%;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.car {
+  position: absolute;
+  border-radius: 7px;
+  border: 1.5px solid rgba(0, 0, 0, 0.24);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transition: transform 120ms linear;
+  z-index: 5;
+}
+
+.car-x {
+  width: 6.5%;
+  min-width: 54px;
+  max-width: 72px;
+  height: 24px;
+}
+
+.car-y {
+  width: 24px;
+  height: 6.5%;
+  min-height: 54px;
+  max-height: 72px;
+}
+
+.car-roof {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 5px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(220, 235, 248, 0.95) 0 28%,
+      rgba(155, 187, 214, 0.92) 28% 72%,
+      rgba(220, 235, 248, 0.95) 72% 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.car-y .car-roof {
+  left: 4px;
+  right: 4px;
+  top: 16%;
+  bottom: 16%;
+}
+
+.car-waiting {
+  transform: scale(0.99);
+}
+
+@media (max-width: 760px) {
+  .scene-body {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .road-stage {
+    margin-top: 0.2rem;
+    min-height: 420px;
+  }
+
+  .road-signal {
+    width: 30px;
+  }
+
+  .car-x {
+    width: 10.5%;
+    min-width: 42px;
+    height: 20px;
+  }
+
+  .car-y {
+    width: 20px;
+    min-height: 42px;
+    height: 10.5%;
+  }
+
+  .lane-arrow {
+    font-size: 0.6rem;
+  }
+}
