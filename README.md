@@ -2,6 +2,10 @@
 
 A browser-based, top-down four-direction intersection simulation built with React and Vite.
 
+## Screenshot
+
+![Traffic intersection simulation screenshot](public/traffic-screenshot.png)
+
 ## Features
 
 - Four-direction traffic: eastbound, westbound, southbound, northbound
